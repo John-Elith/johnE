@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Rubik+Bubbles&display=swap');
+@import 'reset';
+
+$transparente: rgba(0, 0, 0, 0.3);
+$pad-space: 20px;
+$gris-claro: rgb(239, 237, 255);
+$link: rgb(255, 185, 87);
+$succes: rgb(0, 179, 139);
+$letras-foter: #979797;
+
+body {    
+    min-height: 100vh;
+    font-size: 18px;
+}
+
+a {
+    color: $link;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black, 1px 1px 5px black, 1px -1px 5px black;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    background: url('../images/Planta (1).jpg');    
+    nav {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        background: rgba(33, 52, 29, 0.7);
+        padding: 5px $pad-space;
+        border-bottom: 1px solid #0d4e297a;
+        ul {
+            display: inline-flex;
+            align-items: center;
+            justify-content: flex-end;
+            li {
+                margin-right: $pad-space;
+                list-style: none;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    section {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        padding: 50px $pad-space;
+        column-gap: 100px;
+        blockquote {
+            color: white;
+            text-shadow: 1px 1px 1px black, 1px 1px 5px black, 1px -1px 5px black;
+            font-size: 1.2em;
+            padding: $pad-space;
+        }
+        form {
+            background: $transparente;
+            padding: $pad-space;
+            padding-top: 50px;
+            input, button {
+                margin-bottom: $pad-space;
+            }
+            input {
+                padding: 10px;
+                width: calc( 100% - 25px );
+            }
+            button {
+                width: 100%;
+                font-size: .8em;
+                background: $succes;
+                padding: 15px;
+                border: none;
+                color: white;
+                cursor: pointer;
+            }
+            a {
+                display: block;
+                text-align: center;
+            }
+        }
+    }
+}
+main {
+    flex-grow: 1;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 400px 400px;
+    gap: 10;
+}
+section {
+    margin: 20px;
+}
+footer {
+    display: grid;
+    justify-content: space-around;
+    background-color: rgb(27, 27, 27);
+    grid-template-rows: 100px 100px auto;
+    grid-template-columns: 300px 300px auto;
+    color: $letras-foter;
+}
+.pie {
+    padding: 20px;
+}
+.titulo--footer {
+    color: white;
+}
+@media screen and (max-width: 500px) {
+    header {
+        background-image: linear-gradient(225deg, #ff9a2b 0, #ff883b 10%, #ff7647 20%, #ff624f 30%, #ff4e55 40%, #ff3858 50%, #e72259 60%, #d1095b 70%, #bd005c 80%, #ab005e 90%, #9b0060 100%);
+    }
+    header nav {
+        grid-template-columns: 40px 1fr;
+        border-bottom: none;        
+    }
+    blockquote {
+            display: none;
+    }
+    #logo {
+        display: none;
+    }
+    header section{
+        grid-template-columns: 1fr;
+        form {
+            background: rgba(0, 0, 0, 0.6);
+        }
+    }
+    footer {
+        grid-template-rows: 110px 110px auto;
+        grid-template-columns: 90px 110px 1fr;
+    }
+    main {
+        grid-template-columns: 1fr;
+        padding: 30px 5px;
+        section {
+            border-bottom: 3px solid $gris-claro;
+        }
+    }
+
+}
+@media screen and (min-width: 500px) {
+    body {
+        background: rgb(255, 255, 255);
+    }
+    #logo-mini {
+        display: none;
+    }
+}
